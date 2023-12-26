@@ -8,7 +8,6 @@ public class Generator : MonoBehaviour
 
     [SerializeField] private bool _autoLaunch;
     [SerializeField] private bool _oneLaunch;
-    [SerializeField] private bool _continueFromStart;
 
     private IEnumerator Start()
     {
@@ -21,19 +20,9 @@ public class Generator : MonoBehaviour
 
     public IEnumerator Launch()
     {
-        List<CompleteInstruction> reversedInstructions = GetReversedInstruction();
-
         foreach (var instruction in _baseInstructions)
         {
             yield return Launch(instruction);
-        }
-
-        if (!_continueFromStart)
-        {
-            foreach(CompleteInstruction instruction in reversedInstructions)
-            {
-                yield return Launch(instruction);
-            }
         }
     }
 
@@ -62,17 +51,5 @@ public class Generator : MonoBehaviour
     {
         GameObject proj = GameObject.Instantiate(projectile.gameObject, transform.position, Quaternion.identity);
         proj.GetComponent<Projectile>().Launch(new ProjectileModel(PatternCalculus.DegreeToCoord(transform.zRotation, 1)));
-    }
-
-    private List<CompleteInstruction> GetReversedInstruction()
-    {
-        List<CompleteInstruction> rInstructions = new List<CompleteInstruction>();
-
-        for(int i = _baseInstructions.Count - 1; i >= 0; i--)
-        {
-            rInstructions.Add(_baseInstructions[i]);
-        }
-
-        return rInstructions;
     }
 }

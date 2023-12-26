@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f343e2ce049f9e045acf5ee0eb6ba6ca, type: 3}
+  m_Name: Ex1Instruction
+  m_EditorClassIdentifier: 
+  from:
+    config: {fileID: 11400000, guid: bd27643e98d2fd3498fcc129832e8e63, type: 2}
+    launchDelay: 0.1
+  to:
+    config: {fileID: 11400000, guid: 8a53055263830e34f9bfee177c26443b, type: 2}
+    launchDelay: 0.1
+  projPref: {fileID: -1857051753653357347, guid: dcaf6140fba271840bae0def53ffedfc, type: 3}
+  transition: {fileID: 11400000, guid: e327e059f4b8a8a4b9ecc5a93945303c, type: 2}
+  launchesNumber: 30

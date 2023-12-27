@@ -49,7 +49,7 @@ public class Generator : MonoBehaviour
 
     private void LaunchSingleProjectile(EmiterTransform transform, Projectile projectile)
     {
-        GameObject proj = GameObject.Instantiate(projectile.gameObject, transform.position, Quaternion.identity);
+        GameObject proj = GameObject.Instantiate(projectile.gameObject, transform.position + (Vector2)gameObject.transform.position, Quaternion.identity);
         proj.GetComponent<Projectile>().Launch(new ProjectileModel(PatternCalculus.DegreeToCoord(transform.zRotation, 1)));
     }
 }
